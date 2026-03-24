@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal | Dean Rosecrans DME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">Dean Rosecrans</h1>
+            <span class="tagline">Tracheostomy Supplies</span>
+        </div>
+        <button id="logoutBtn" class="btn-logout" style="display: none;">Log Out</button>
+    </header>
+
+    <!-- Auth Container -->
+    <main class="container">
+
+        <!-- Login View -->
+        <div id="loginView" class="auth-card">
+            <h2>Patient Login</h2>
+            <p class="subtitle">Access your account to manage your supplies</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <div id="loginError" class="error-message"></div>
+                <button type="submit" class="btn-primary">Log In</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="#" id="showRegister">Create Account</a></p>
+                <p><a href="#" id="showReset">Forgot Password?</a></p>
+            </div>
+        </div>
+
+        <!-- Register View -->
+        <div id="registerView" class="auth-card" style="display: none;">
+            <h2>Create Account</h2>
+            <p class="subtitle">Register to order your tracheostomy supplies</p>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required placeholder="Create a password (min 6 characters)">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                <div id="registerError" class="error-message"></div>
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="#" id="showLogin">Log In</a></p>
+            </div>
+        </div>
+
+        <!-- Password Reset View -->
+        <div id="resetView" class="auth-card" style="display: none;">
+            <h2>Reset Password</h2>
+            <p class="subtitle">Enter your email to receive a reset link</p>
+
+            <form id="resetForm">
+                <div class="form-group">
+                    <label for="resetEmail">Email</label>
+                    <input type="email" id="resetEmail" required placeholder="your@email.com">
+                </div>
+                <div id="resetError" class="error-message"></div>
+                <div id="resetSuccess" class="success-message"></div>
+                <button type="submit" class="btn-primary">Send Reset Link</button>
+            </form>
+
+            <div class="auth-footer">
+                <p><a href="#" id="backToLogin">Back to Login</a></p>
+            </div>
+        </div>
+
+        <!-- Patient Portal View -->
+        <div id="portalView" class="portal" style="display: none;">
+            <div class="welcome-banner">
+                <h2>Welcome, <span id="userName">Patient</span></h2>
+                <p>Complete the form below to set up your account and order supplies.</p>
+            </div>
+
+            <div class="form-container">
+                <iframe
+                    id="JotFormIFrame"
+                    title="Medical Equipment Billing Form"
+                    src="https://form.jotform.com/260824860683060"
+                    style="width: 100%; min-height: 800px; border: none;"
+                    scrolling="yes"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="info-card">
+                <h3>Monthly Supply Reorders</h3>
+                <p>After submitting this form, you'll receive a text message each month to confirm your supply reorder. Simply reply to confirm and we'll process your order.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Dean Rosecrans DME | Tracheostomy Supplies</p>
+        <p class="hipaa-notice">Your information is protected under HIPAA privacy regulations.</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
