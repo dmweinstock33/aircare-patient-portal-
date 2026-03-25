@@ -3,128 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Portal | Dean Rosecrans DME</title>
+    <title>UltraVoice AirCare | Tracheostomy Supply Subscription</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Landing Page Styles */
+        .landing-hero {
+            background: linear-gradient(135deg, #9966CC 0%, #7744aa 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #9966CC;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #9966CC;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #9966CC;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background: #9966CC;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #333333 0%, #444444 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button-alt {
+            display: inline-block;
+            background-color: #9966CC;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-alt:hover {
+            background-color: #8855bb;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <h1 class="logo">Dean Rosecrans</h1>
-            <span class="tagline">Tracheostomy Supplies</span>
+            <h1 class="logo">UltraVoice AirCare</h1>
+            <span class="tagline">by Dean Rosecrans</span>
         </div>
-        <button id="logoutBtn" class="btn-logout" style="display: none;">Log Out</button>
+        <a href="portal.html" class="btn-logout" style="display: inline-block; text-decoration: none;">Patient Login</a>
     </header>
 
-    <!-- Auth Container -->
-    <main class="container">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Tracheostomy Supplies</h1>
+            <p class="hero-subtitle">Delivered When You Need Them</p>
+            <p class="hero-tagline">
+                Experience our frictionless subscription service. Get the supplies you need,
+                the support you deserve, and the simplicity of reordering with just a text message.
+            </p>
+            <a href="portal.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
 
-        <!-- Login View -->
-        <div id="loginView" class="auth-card">
-            <h2>Patient Login</h2>
-            <p class="subtitle">Access your account to manage your supplies</p>
-
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" required placeholder="your@email.com">
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="section-title">Why Choose AirCare?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#128173;</div>
+                    <h3>Simple Text Reordering</h3>
+                    <p>Once enrolled, reordering your monthly supplies is as easy as replying to a text message. No phone calls, no hassle.</p>
                 </div>
-                <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                <div class="feature-card">
+                    <div class="feature-icon">&#127973;</div>
+                    <h3>Insurance Coverage</h3>
+                    <p>We work directly with your insurance provider to maximize your coverage. Take full advantage of your benefits.</p>
                 </div>
-                <div id="loginError" class="error-message"></div>
-                <button type="submit" class="btn-primary">Log In</button>
-            </form>
-
-            <div class="auth-footer">
-                <p>Don't have an account? <a href="#" id="showRegister">Create Account</a></p>
-                <p><a href="#" id="showReset">Forgot Password?</a></p>
+                <div class="feature-card">
+                    <div class="feature-icon">&#129309;</div>
+                    <h3>Dedicated Support</h3>
+                    <p>Get all the support you need from our experienced team. We're here to help with questions, paperwork, and care.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Register View -->
-        <div id="registerView" class="auth-card" style="display: none;">
-            <h2>Create Account</h2>
-            <p class="subtitle">Register to order your tracheostomy supplies</p>
-
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" required placeholder="your@email.com">
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="steps-container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Create Your Account</h3>
+                    <p>Sign up and complete your patient information, including insurance details and prescription requirements.</p>
                 </div>
-                <div class="form-group">
-                    <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" required placeholder="Create a password (min 6 characters)">
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>We Handle the Paperwork</h3>
+                    <p>Our team verifies your insurance, coordinates with your physician, and ensures everything is in order.</p>
                 </div>
-                <div class="form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Receive Your Supplies</h3>
+                    <p>Your tracheostomy supplies are delivered directly to your door, on schedule, every month.</p>
                 </div>
-                <div id="registerError" class="error-message"></div>
-                <button type="submit" class="btn-primary">Create Account</button>
-            </form>
-
-            <div class="auth-footer">
-                <p>Already have an account? <a href="#" id="showLogin">Log In</a></p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Reorder via Text</h3>
+                    <p>Each month, simply reply to our text message to confirm your order. It's that easy.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Password Reset View -->
-        <div id="resetView" class="auth-card" style="display: none;">
-            <h2>Reset Password</h2>
-            <p class="subtitle">Enter your email to receive a reset link</p>
-
-            <form id="resetForm">
-                <div class="form-group">
-                    <label for="resetEmail">Email</label>
-                    <input type="email" id="resetEmail" required placeholder="your@email.com">
-                </div>
-                <div id="resetError" class="error-message"></div>
-                <div id="resetSuccess" class="success-message"></div>
-                <button type="submit" class="btn-primary">Send Reset Link</button>
-            </form>
-
-            <div class="auth-footer">
-                <p><a href="#" id="backToLogin">Back to Login</a></p>
-            </div>
-        </div>
-
-        <!-- Patient Portal View -->
-        <div id="portalView" class="portal" style="display: none;">
-            <div class="welcome-banner">
-                <h2>Welcome, <span id="userName">Patient</span></h2>
-                <p>Complete the form below to set up your account and order supplies.</p>
-            </div>
-
-            <div class="form-container">
-                <iframe
-                    id="JotFormIFrame"
-                    title="Medical Equipment Billing Form"
-                    src="https://form.jotform.com/260824860683060"
-                    style="width: 100%; min-height: 800px; border: none;"
-                    scrolling="yes"
-                    allowfullscreen
-                ></iframe>
-            </div>
-
-            <div class="info-card">
-                <h3>Monthly Supply Reorders</h3>
-                <p>After submitting this form, you'll receive a text message each month to confirm your supply reorder. Simply reply to confirm and we'll process your order.</p>
-            </div>
-        </div>
-
-    </main>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Simplify Your Supply Orders?</h2>
+        <p>Join AirCare today and experience hassle-free tracheostomy supply delivery.</p>
+        <a href="portal.html" class="cta-button-alt">Create Your Account</a>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Dean Rosecrans DME | Tracheostomy Supplies</p>
+        <p>UltraVoice AirCare | Powered by Dean Rosecrans DME</p>
         <p class="hipaa-notice">Your information is protected under HIPAA privacy regulations.</p>
     </footer>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
