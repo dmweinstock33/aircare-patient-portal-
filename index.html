@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Landing Page Styles */
+
+        /* Phone Banner */
+        .phone-banner {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .phone-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .phone-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .phone-number {
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
         .landing-hero {
             background: linear-gradient(135deg, #9966CC 0%, #7744aa 100%);
             color: white;
@@ -57,6 +83,45 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
+        /* Text Reorder Highlight */
+        .text-highlight {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .text-highlight-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-highlight h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-highlight .highlight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-highlight p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .text-badge {
+            display: inline-block;
+            background: #9966CC;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
         /* Features Section */
         .features-section {
             padding: 4rem 2rem;
@@ -105,10 +170,54 @@
             line-height: 1.6;
         }
 
+        /* What's Covered Section */
+        .covered-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .covered-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .supplies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .supply-item {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #9966CC;
+        }
+
+        .supply-item h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .supply-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .covered-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+
         /* How It Works Section */
         .how-it-works {
             padding: 4rem 2rem;
-            background: white;
+            background: #f5f5f5;
         }
 
         .steps-container {
@@ -121,7 +230,7 @@
             align-items: flex-start;
             margin-bottom: 2rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .step:last-child {
@@ -155,9 +264,52 @@
             line-height: 1.5;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e8e8e8;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            color: #9966CC;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #333333 0%, #444444 100%);
+            background: linear-gradient(135deg, #9966CC 0%, #7744aa 100%);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -176,8 +328,8 @@
 
         .cta-button-alt {
             display: inline-block;
-            background-color: #9966CC;
-            color: white;
+            background-color: white;
+            color: #9966CC;
             padding: 1rem 2.5rem;
             font-size: 1.1rem;
             font-weight: 600;
@@ -187,8 +339,72 @@
         }
 
         .cta-button-alt:hover {
-            background-color: #8855bb;
             transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-phone {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-phone a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer-main {
+            background-color: #333333;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #9966CC;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #2a2a2a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.25rem;
+            opacity: 0.8;
+        }
+
+        .hipaa-notice {
+            font-size: 0.85rem;
+            opacity: 0.6;
         }
 
         /* Responsive */
@@ -209,10 +425,23 @@
             .step-number {
                 margin: 0 auto 1rem;
             }
+
+            .phone-banner {
+                font-size: 0.9rem;
+            }
+
+            .phone-number {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Phone Banner -->
+    <div class="phone-banner">
+        Questions? Call us: <a href="tel:800-237-3699" class="phone-number">800-237-3699</a>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
@@ -232,6 +461,16 @@
                 the support you deserve, and the simplicity of reordering with just a text message.
             </p>
             <a href="portal.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Text Reorder Highlight -->
+    <section class="text-highlight">
+        <div class="text-highlight-content">
+            <div class="highlight-icon">&#128241;</div>
+            <h2>Reorder Supplies with a Simple Text</h2>
+            <p>No more phone calls, no more waiting on hold. Once you're enrolled, we'll text you each month to confirm your order. Just reply "YES" and your supplies ship automatically.</p>
+            <div class="text-badge">Only Available with AirCare</div>
         </div>
     </section>
 
@@ -256,6 +495,48 @@
                     <p>Get all the support you need from our experienced team. We're here to help with questions, paperwork, and care.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- What's Covered Section -->
+    <section class="covered-section">
+        <div class="covered-container">
+            <h2 class="section-title">What's Covered?</h2>
+            <div class="supplies-grid">
+                <div class="supply-item">
+                    <h4>Tracheostomy Tubes</h4>
+                    <p>Standard and specialty tubes from leading manufacturers</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Inner Cannulas</h4>
+                    <p>Disposable and reusable inner cannulas</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Trach Ties & Holders</h4>
+                    <p>Comfortable, secure tube holders and ties</p>
+                </div>
+                <div class="supply-item">
+                    <h4>HME & Filters</h4>
+                    <p>Heat and moisture exchangers for airway protection</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Suction Equipment</h4>
+                    <p>Catheters, tubing, and portable suction machines</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Cleaning & Care Kits</h4>
+                    <p>Brushes, saline, and daily care supplies</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Speaking Valves</h4>
+                    <p>Passy-Muir and other speaking valve options</p>
+                </div>
+                <div class="supply-item">
+                    <h4>Emergency Supplies</h4>
+                    <p>Backup tubes and emergency kits for peace of mind</p>
+                </div>
+            </div>
+            <p class="covered-note">Coverage varies by insurance plan. We'll verify your benefits at no cost to you.</p>
         </div>
     </section>
 
@@ -294,17 +575,77 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Does my insurance cover tracheostomy supplies?</div>
+                <p class="faq-answer">Most insurance plans, including Medicare, Medicaid, and private insurance, cover tracheostomy supplies as durable medical equipment (DME). We'll verify your coverage for free before you enroll.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How often can I receive supplies?</div>
+                <p class="faq-answer">Most insurance plans allow monthly shipments of tracheostomy supplies. We'll work with your insurance to ensure you receive the maximum allowable quantities on a regular schedule.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I need a prescription?</div>
+                <p class="faq-answer">Yes, a prescription from your physician is required. Don't worry - we can coordinate with your doctor's office to obtain the necessary documentation.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the text reorder system work?</div>
+                <p class="faq-answer">Each month, we'll send you a text message asking if you need your supplies refilled. Simply reply "YES" to confirm, and we'll process and ship your order. No phone calls or online logins required.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if I need to change my order?</div>
+                <p class="faq-answer">No problem. You can call us at 800-237-3699 or reply to any text message with your request. We're here to help adjust quantities, change products, or update your delivery schedule.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is there any cost to me?</div>
+                <p class="faq-answer">If your insurance covers tracheostomy supplies, your out-of-pocket cost depends on your plan's deductible and copay structure. Many patients receive supplies at little to no cost. We'll explain your specific costs before shipping.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Ready to Simplify Your Supply Orders?</h2>
         <p>Join AirCare today and experience hassle-free tracheostomy supply delivery.</p>
         <a href="portal.html" class="cta-button-alt">Create Your Account</a>
+        <p class="cta-phone">Or call us: <a href="tel:800-237-3699">800-237-3699</a></p>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-main">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:800-237-3699">800-237-3699</a></p>
+                <p><strong>Fax:</strong> 610-356-4481</p>
+                <p><strong>Hours:</strong> Mon-Fri 9am-5pm EST</p>
+            </div>
+            <div class="footer-section">
+                <h4>Mailing Address</h4>
+                <p>Dean Rosecrans</p>
+                <p>PO Box 553</p>
+                <p>Newtown Square, PA 19073</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="portal.html">Patient Login</a></p>
+                <p><a href="portal.html">Create Account</a></p>
+                <p><a href="tel:800-237-3699">Call Us</a></p>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
         <p>UltraVoice AirCare | Powered by Dean Rosecrans DME</p>
         <p class="hipaa-notice">Your information is protected under HIPAA privacy regulations.</p>
-    </footer>
+    </div>
 </body>
 </html>
