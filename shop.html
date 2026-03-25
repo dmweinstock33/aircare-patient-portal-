@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Tracheostomy Supplies | AirCare by Dean R.</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Shop Page Styles */
+
+        /* Phone Banner */
+        .phone-banner {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .phone-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .phone-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .phone-number {
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Shop Hero */
+        .shop-hero {
+            background: linear-gradient(135deg, #9966CC 0%, #7744aa 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .shop-hero h1 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .shop-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            background: #f5f5f5;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .category-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .category-link {
+            background: white;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            transition: all 0.2s ease;
+        }
+
+        .category-link:hover {
+            background: #9966CC;
+            color: white;
+            border-color: #9966CC;
+        }
+
+        /* Shop Container */
+        .shop-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #9966CC;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .category-header h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .category-header p {
+            color: #666;
+            margin: 0.25rem 0 0 0;
+            font-size: 0.95rem;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #9966CC;
+        }
+
+        .product-info {
+            padding: 1.25rem;
+        }
+
+        .product-info h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .insurance-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .btn-request {
+            display: block;
+            width: 100%;
+            background: #9966CC;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .btn-request:hover {
+            background: #8855bb;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .info-banner h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .info-banner p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .info-banner-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-feature span {
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        .footer-main {
+            background-color: #333333;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #9966CC;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: #2a2a2a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.25rem;
+            opacity: 0.8;
+        }
+
+        .hipaa-notice {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .shop-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .category-nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .category-link {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-banner-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Phone Banner -->
+    <div class="phone-banner">
+        Questions? Call us: <a href="tel:800-237-3699" class="phone-number">800-237-3699</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" style="text-decoration: none; color: white;">
+                <h1 class="logo">AirCare</h1>
+            </a>
+            <span class="tagline">by Dean R.</span>
+        </div>
+        <a href="portal.html" class="btn-logout" style="display: inline-block; text-decoration: none;">Patient Login</a>
+    </header>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <h1>Tracheostomy Supplies</h1>
+        <p>Browse our complete catalog of tracheostomy care products. Most items are covered by Medicare and private insurance.</p>
+    </section>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-nav-inner">
+            <a href="#tubes" class="category-link">Trach Tubes</a>
+            <a href="#cannulas" class="category-link">Inner Cannulas</a>
+            <a href="#care-kits" class="category-link">Care Kits</a>
+            <a href="#holders" class="category-link">Tube Holders</a>
+            <a href="#hme" class="category-link">HME Filters</a>
+            <a href="#suction" class="category-link">Suction Supplies</a>
+            <a href="#speaking" class="category-link">Speaking Valves</a>
+            <a href="#cleaning" class="category-link">Cleaning Supplies</a>
+        </div>
+    </nav>
+
+    <!-- Shop Container -->
+    <div class="shop-container">
+
+        <!-- Info Banner -->
+        <div class="info-banner">
+            <h3>Insurance-Covered Supplies Delivered Monthly</h3>
+            <p>We work with your insurance to maximize coverage. Most patients pay little to no out-of-pocket costs.</p>
+            <div class="info-banner-features">
+                <div class="info-feature">
+                    <span>&#10003;</span> Free Insurance Verification
+                </div>
+                <div class="info-feature">
+                    <span>&#10003;</span> Free Shipping
+                </div>
+                <div class="info-feature">
+                    <span>&#10003;</span> Text-to-Reorder
+                </div>
+            </div>
+        </div>
+
+        <!-- Tracheostomy Tubes -->
+        <section id="tubes" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#129656;</span>
+                <div>
+                    <h2>Tracheostomy Tubes</h2>
+                    <p>Cuffed, uncuffed, and specialty tracheostomy tubes from leading manufacturers</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#129656;</div>
+                    <div class="product-info">
+                        <h3>Cuffed Tracheostomy Tube</h3>
+                        <p>Standard cuffed trach tube with obturator and neck strap. Available in multiple sizes for adults and pediatrics.</p>
+                        <div class="product-meta">
+                            <span>Multiple sizes available</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129656;</div>
+                    <div class="product-info">
+                        <h3>Uncuffed Tracheostomy Tube</h3>
+                        <p>Standard uncuffed trach tube for patients who don't require a sealed airway. Includes obturator.</p>
+                        <div class="product-meta">
+                            <span>Multiple sizes available</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129656;</div>
+                    <div class="product-info">
+                        <h3>Fenestrated Tracheostomy Tube</h3>
+                        <p>Tube with fenestration opening to allow airflow through vocal cords for speech. Cuffed and uncuffed options.</p>
+                        <div class="product-meta">
+                            <span>Multiple sizes available</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129656;</div>
+                    <div class="product-info">
+                        <h3>Extended Length Tracheostomy Tube</h3>
+                        <p>Proximal or distal extended length tubes for patients requiring non-standard tube lengths.</p>
+                        <div class="product-meta">
+                            <span>Custom lengths available</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inner Cannulas -->
+        <section id="cannulas" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#9898;</span>
+                <div>
+                    <h2>Inner Cannulas</h2>
+                    <p>Disposable and reusable inner cannulas for easy cleaning and airway maintenance</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#9898;</div>
+                    <div class="product-info">
+                        <h3>Disposable Inner Cannula</h3>
+                        <p>Single-use inner cannulas for convenient daily replacement. Reduces infection risk and cleaning time.</p>
+                        <div class="product-meta">
+                            <span>Box of 10</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#9898;</div>
+                    <div class="product-info">
+                        <h3>Reusable Inner Cannula</h3>
+                        <p>Durable inner cannula designed for cleaning and reuse. Compatible with most tracheostomy tubes.</p>
+                        <div class="product-meta">
+                            <span>Multiple sizes</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#9898;</div>
+                    <div class="product-info">
+                        <h3>Fenestrated Inner Cannula</h3>
+                        <p>Inner cannula with fenestration for use with fenestrated tracheostomy tubes to enable speech.</p>
+                        <div class="product-meta">
+                            <span>Multiple sizes</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care Kits -->
+        <section id="care-kits" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#128230;</span>
+                <div>
+                    <h2>Tracheostomy Care Kits</h2>
+                    <p>Complete care kits with everything needed for daily tracheostomy maintenance</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#128230;</div>
+                    <div class="product-info">
+                        <h3>Basic Trach Care Kit</h3>
+                        <p>Includes gauze, cotton applicators, trach brush, and cleaning solution for daily stoma care.</p>
+                        <div class="product-meta">
+                            <span>Sterile, single-use</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128230;</div>
+                    <div class="product-info">
+                        <h3>Complete Trach Care Kit</h3>
+                        <p>Comprehensive kit with gloves, drape, gauze, brush, pipe cleaners, basin, and saline.</p>
+                        <div class="product-meta">
+                            <span>Sterile, single-use</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128230;</div>
+                    <div class="product-info">
+                        <h3>Trach Dressing Change Kit</h3>
+                        <p>Kit focused on dressing changes with split gauze, tape, and skin prep supplies.</p>
+                        <div class="product-meta">
+                            <span>Sterile, single-use</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tube Holders -->
+        <section id="holders" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#127992;</span>
+                <div>
+                    <h2>Tube Holders & Ties</h2>
+                    <p>Secure and comfortable tracheostomy tube holders and neck ties</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#127992;</div>
+                    <div class="product-info">
+                        <h3>Foam Trach Tie</h3>
+                        <p>Soft foam padding with velcro closure for secure, comfortable tube positioning. Adjustable fit.</p>
+                        <div class="product-meta">
+                            <span>Adult & Pediatric sizes</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#127992;</div>
+                    <div class="product-info">
+                        <h3>Twill Trach Ties</h3>
+                        <p>Traditional cotton twill ties for securing tracheostomy tubes. Economical and reliable.</p>
+                        <div class="product-meta">
+                            <span>Pack of 12</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#127992;</div>
+                    <div class="product-info">
+                        <h3>Neoprene Tube Holder</h3>
+                        <p>Water-resistant neoprene holder ideal for active patients. Quick-release buckle closure.</p>
+                        <div class="product-meta">
+                            <span>One size fits most</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#127992;</div>
+                    <div class="product-info">
+                        <h3>Pediatric Trach Holder</h3>
+                        <p>Specially designed for infants and children with soft, gentle materials and secure fit.</p>
+                        <div class="product-meta">
+                            <span>Pediatric sizes</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HME Filters -->
+        <section id="hme" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#128168;</span>
+                <div>
+                    <h2>HME & Filters</h2>
+                    <p>Heat and moisture exchangers to protect airways and improve breathing comfort</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#128168;</div>
+                    <div class="product-info">
+                        <h3>Standard HME</h3>
+                        <p>Heat and moisture exchanger that captures exhaled moisture and returns it during inhalation.</p>
+                        <div class="product-meta">
+                            <span>Box of 30</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128168;</div>
+                    <div class="product-info">
+                        <h3>HME with Oxygen Port</h3>
+                        <p>Heat moisture exchanger with integrated oxygen connector for supplemental O2 delivery.</p>
+                        <div class="product-meta">
+                            <span>Box of 30</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128168;</div>
+                    <div class="product-info">
+                        <h3>Shower Guard / Stoma Cover</h3>
+                        <p>Water-resistant cover to protect stoma during showering and humid conditions.</p>
+                        <div class="product-meta">
+                            <span>Reusable</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128168;</div>
+                    <div class="product-info">
+                        <h3>Trach Cover / Bib</h3>
+                        <p>Decorative and functional stoma covers for everyday wear. Filters dust and debris.</p>
+                        <div class="product-meta">
+                            <span>Various styles</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suction Supplies -->
+        <section id="suction" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#128167;</span>
+                <div>
+                    <h2>Suction Supplies</h2>
+                    <p>Suction catheters, tubing, and portable suction equipment for airway clearance</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#128167;</div>
+                    <div class="product-info">
+                        <h3>Suction Catheter</h3>
+                        <p>Flexible suction catheters for airway clearance. Available in multiple French sizes.</p>
+                        <div class="product-meta">
+                            <span>Box of 50</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128167;</div>
+                    <div class="product-info">
+                        <h3>Suction Catheter Kit</h3>
+                        <p>Complete kit with catheter, gloves, and saline for sterile suctioning procedure.</p>
+                        <div class="product-meta">
+                            <span>Sterile, single-use</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128167;</div>
+                    <div class="product-info">
+                        <h3>Suction Connection Tubing</h3>
+                        <p>Flexible tubing to connect suction catheter to suction machine. Various lengths available.</p>
+                        <div class="product-meta">
+                            <span>6 ft length</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128167;</div>
+                    <div class="product-info">
+                        <h3>Portable Suction Machine</h3>
+                        <p>Battery-operated portable suction unit for home and travel use. Includes carrying case.</p>
+                        <div class="product-meta">
+                            <span>Rechargeable</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128167;</div>
+                    <div class="product-info">
+                        <h3>Suction Canister</h3>
+                        <p>Collection container for suction machine. Disposable with lid for hygienic disposal.</p>
+                        <div class="product-meta">
+                            <span>800ml - 1200ml</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaking Valves -->
+        <section id="speaking" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#128483;</span>
+                <div>
+                    <h2>Speaking Valves</h2>
+                    <p>One-way valves that enable speech for tracheostomy patients</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#128483;</div>
+                    <div class="product-info">
+                        <h3>Speaking Valve - Standard</h3>
+                        <p>One-way valve that closes during exhalation, redirecting air through vocal cords for speech.</p>
+                        <div class="product-meta">
+                            <span>Reusable</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128483;</div>
+                    <div class="product-info">
+                        <h3>Speaking Valve with Oxygen Adapter</h3>
+                        <p>Speaking valve with integrated port for supplemental oxygen delivery during use.</p>
+                        <div class="product-meta">
+                            <span>Reusable</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#128483;</div>
+                    <div class="product-info">
+                        <h3>Low-Profile Speaking Valve</h3>
+                        <p>Compact design speaking valve for less visible appearance and improved comfort.</p>
+                        <div class="product-meta">
+                            <span>Reusable</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cleaning Supplies -->
+        <section id="cleaning" class="category-section">
+            <div class="category-header">
+                <span class="category-icon">&#129532;</span>
+                <div>
+                    <h2>Cleaning & Maintenance</h2>
+                    <p>Brushes, saline, and supplies for daily tracheostomy care and equipment cleaning</p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Trach Cleaning Brush Set</h3>
+                        <p>Set of brushes in various sizes for cleaning inner cannulas and tracheostomy tubes.</p>
+                        <div class="product-meta">
+                            <span>Set of 3</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Sterile Saline Solution</h3>
+                        <p>Sterile 0.9% sodium chloride solution for cleaning and moistening airways.</p>
+                        <div class="product-meta">
+                            <span>Various sizes</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Saline Bullets</h3>
+                        <p>Pre-measured sterile saline in single-use vials for convenient instillation and cleaning.</p>
+                        <div class="product-meta">
+                            <span>Box of 100</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Trach Gauze / Split Sponges</h3>
+                        <p>Pre-cut gauze dressings designed to fit around tracheostomy tube at stoma site.</p>
+                        <div class="product-meta">
+                            <span>Box of 50</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Pipe Cleaners</h3>
+                        <p>Flexible pipe cleaners for cleaning inner cannulas and hard-to-reach areas.</p>
+                        <div class="product-meta">
+                            <span>Pack of 50</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129532;</div>
+                    <div class="product-info">
+                        <h3>Hydrogen Peroxide Solution</h3>
+                        <p>3% hydrogen peroxide for cleaning tracheostomy equipment and supplies.</p>
+                        <div class="product-meta">
+                            <span>16 oz bottle</span>
+                            <span class="insurance-badge">Insurance Covered</span>
+                        </div>
+                        <a href="portal.html" class="btn-request">Request This Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><strong>Phone:</strong> <a href="tel:800-237-3699">800-237-3699</a></p>
+                <p><strong>Fax:</strong> 610-356-4481</p>
+                <p><strong>Hours:</strong> Mon-Fri 9am-5pm EST</p>
+            </div>
+            <div class="footer-section">
+                <h4>Mailing Address</h4>
+                <p>Dean Rosecrans</p>
+                <p>PO Box 553</p>
+                <p>Newtown Square, PA 19073</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="portal.html">Patient Login</a></p>
+                <p><a href="tel:800-237-3699">Call Us</a></p>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>AirCare by Dean R. | Tracheostomy Supply Subscription</p>
+        <p class="hipaa-notice">Your information is protected under HIPAA privacy regulations.</p>
+    </div>
+</body>
+</html>
